@@ -78,6 +78,11 @@
 			<img id="optionWheel" class="overlayThing" v-if="player.tab!='options-tab'" src="options_wheel.png"
 				onclick="showTab('options-tab')"></img>
 			<div id="info" v-if="player.tab!='info-tab'" class="overlayThing" onclick="showTab('info-tab')"><br>i</div>
+			<div class=overlayThing>
+				<span><br>
+					Endgame: 2.5e19 Quantities + 5 Improvers
+				</span>
+			</div>
 			<div id="discord" class="overlayThing">
 				<img onclick="window.open((modInfo.discordLink ? modInfo.discordLink : 'https://discord.gg/F3xveHV'),'mywindow')"
 					src="discord.png" target="_blank"></img>
