@@ -1,28 +1,46 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
+	name: "Testing Tree",
+	id: "testingmodidk",
+	author: "Someone",
+	pointsName: "Quantities",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (5), // Used for hard resets and new players
+	offlineLimit: 1.5,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.2.1",
+	name: "Getting Somewhere",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+	<br>
+	<h3>v0.2.1</h3><br>
+		- Minor adjustments<br>
+		- Little grammar changes<br>
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+	<br>
+	<h2>v0.2 - Getting Somewhere</h2><br>
+		- Added a Layer (I)<br>
+		- Added 2 Milestones<br>
+
+	<br>
+	<h2>v0.1 - Practically Nothing</h2><br>
+		- Added 2 Layers (S and P)<br>
+		- Added 8 Upgrades and 2 Milestones<br>
+		- This is only the beginning of this garbage<br>
+	
+	<br>
+	<h3>v0.0.1 - Absolutely Nothing</h3><br>
+		- Started developing this <s>garbage</s> game`
+
+let winText = `Congratulations! But... is this the end?`
+
+//Congratulations! You have reached the end and beaten this game, but for now...
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -41,8 +59,14 @@ function canGenPoints(){
 function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
-
+		
 	let gain = new Decimal(1)
+
+	if (hasUpgrade('s', 11)) gain = gain.times(5)
+	if (hasUpgrade('s', 12)) gain = gain.times(upgradeEffect('s', 12))
+	if (hasUpgrade('s', 14)) gain = gain.times(upgradeEffect('s', 14))
+	if(player.prod.unlocked)gain=gain.mul(tmp.prod.effect)
+
 	return gain
 }
 
@@ -56,10 +80,10 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	let isEndgame = (player.points.gte(new Decimal("2.5e19")) && player.imp.points.gte(5))
+
+	return isEndgame
 }
-
-
 
 // Less important things beyond this point!
 
