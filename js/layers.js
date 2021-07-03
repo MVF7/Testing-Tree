@@ -209,12 +209,11 @@ addLayer("prod", {
     ],
     layerShown(){return hasUpgrade("s",14) || player[this.layer].unlocked},
 
-    milestonePopups(){return (player.n.unlocked) || false},
-
     milestonePopups(){
         if (player.n.unlocked){
             milestonePopups = false
         }
+        else milestonePopups = true
         return milestonePopups
     },
 
@@ -291,6 +290,7 @@ addLayer("imp", {
         if (player.n.unlocked){
             milestonePopups = false
         }
+        else milestonePopups = true
         return milestonePopups
     },
 

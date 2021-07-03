@@ -13,11 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.3",
+	num: "0.3.0.1",
 	name: "Progressing...",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<br>
+	<h3>v0.3.0.1</h3><br>
+		- Fixed things about Milestone Popups<br>
+		(This made the game not to load)<br>
 	<br>
 	<h3>v0.3 - Progressing...</h3><br>
 		- Added 4 Milestones and an Upgrade<br>
