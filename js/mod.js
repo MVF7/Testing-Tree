@@ -8,20 +8,26 @@ let modInfo = {
 	discordName: "",
 	discordLink: "",
 	initialStartPoints: new Decimal (5), // Used for hard resets and new players
-	offlineLimit: 1.5,  // In hours
+	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.2.1",
-	name: "Getting Somewhere",
+	num: "0.3",
+	name: "Progressing...",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<br>
+	<h3>v0.3 - Progressing...</h3><br>
+		- Added 4 Milestones and an Upgrade<br>
+		- Started developing a new Layer (N)<br>
+		- Adjusted some things<br>
+	<br>
 	<h3>v0.2.1</h3><br>
 		- Minor adjustments<br>
 		- Little grammar changes<br>
+		- <u>Published this game on GitHub</u><br>
 
 	<br>
 	<h2>v0.2 - Getting Somewhere</h2><br>
@@ -65,7 +71,8 @@ function getPointGen() {
 	if (hasUpgrade('s', 11)) gain = gain.times(5)
 	if (hasUpgrade('s', 12)) gain = gain.times(upgradeEffect('s', 12))
 	if (hasUpgrade('s', 14)) gain = gain.times(upgradeEffect('s', 14))
-	if(player.prod.unlocked)gain=gain.mul(tmp.prod.effect)
+	if (player.prod.unlocked) gain = gain.times(tmp.prod.effect)
+	if (player.n.unlocked) gain = gain.times(tmp.n.effect)
 
 	return gain
 }
@@ -80,7 +87,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	let isEndgame = (player.points.gte(new Decimal("2.5e19")) && player.imp.points.gte(5))
+	let isEndgame = (player.n.points.gte(10))
 
 	return isEndgame
 }
