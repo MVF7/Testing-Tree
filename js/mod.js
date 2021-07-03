@@ -23,7 +23,7 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Fixed things about Milestone Popups<br>
 		(This made the game not to load)<br>
 	<br>
-	<h3>v0.3 - Progressing...</h3><br>
+	<h2>v0.3 - Progressing...</h2><br>
 		- Added 4 Milestones and an Upgrade<br>
 		- Started developing a new Layer (N)<br>
 		- Adjusted some things<br>
