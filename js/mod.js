@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "Testing Tree",
 	id: "testingmodidk",
-	author: "Someone",
+	author: "MVF",
 	pointsName: "Quantities",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -13,11 +13,16 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.3.0.1",
+	num: "0.3.1",
 	name: "Progressing...",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<br>
+	<h3>v0.3.1</h3><br>
+		- Added 3 Milestones<br>
+		- Added 5 Upgrades<br>
+		- 2 new Layers soon...<br>
 	<br>
 	<h3>v0.3.0.1</h3><br>
 		- Fixed things about Milestone Popups<br>
@@ -91,7 +96,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	let isEndgame = (player.n.points.gte(10))
+	let isEndgame = (player.n.points.gte(250000))
 
 	return isEndgame
 }
