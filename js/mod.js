@@ -13,11 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.3.1",
+	num: "0.3.1.1",
 	name: "Progressing...",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<br>
+	<h3>v0.3.1.1</h3><br>
+		- Corrected the symbols from Protons and Electrons<br>
+		- Updated TMT (2.6.4.3 -> 2.6.5)<br>
 	<br>
 	<h3>v0.3.1</h3><br>
 		- Added 3 Milestones<br>

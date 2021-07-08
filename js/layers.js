@@ -490,9 +490,9 @@ addLayer("n", {
 
 })
 
-addLayer("p-", {
+addLayer("p+", {
     name: "protons",
-    symbol: "P-",
+    symbol: "P+",
     position: -1,
     startData() { return {
         unlocked: false,
@@ -530,9 +530,9 @@ addLayer("p-", {
 
 })
 
-addLayer("e+", {
+addLayer("e-", {
     name: "electrons",
-    symbol: "E+",
+    symbol: "E-",
     position: 1,
     startData() { return {
         unlocked: false,
